@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kolosalon</title>
+</head>
+<body>
+  <h1>Objednávkový formulář k zápůjčce</h1>
+  <form id="objednavka">
+    <fieldset>
+      <legend>Vyber typ kola:</legend>
+      <label>
+        <input type="checkbox" name="typKola" value="horske"> Horské (500 Kč/den)
+        <input type="number" name="horskePocet" min="0" value="0">
+      </label><br>
+      <label>
+        <input type="checkbox" name="typKola" value="detske"> Dětské (200 Kč/den)
+        <input type="number" name="detskePocet" min="0" value="0">
+      </label><br>
+      <label>
+        <input type="checkbox" name="typKola" value="silnicni"> Silniční (1 500 Kč/den)
+        <input type="number" name="silnicniPocet" min="0" value="0">
+      </label><br>
+      <label>
+        <input type="checkbox" name="typKola" value="gravel"> Gravel (2 500 Kč/den)
+        <input type="number" name="gravelPocet" min="0" value="0">
+      </label>
+    </fieldset>
+    <br>
+    <label>Vyber délku zapůjčení:</label>
+    <select name="pocetDnu">
+      <option value="5">5 dnů</option>
+      <option value="7">Týden</option>
+      <option value="14">14 dní</option>
+      <option value="30">Měsíc</option>
+    </select>
+    <br><br>
+    <fieldset>
+      <legend>Vyber si cyklonosič:</legend>
+      <label>
+        <input type="radio" name="cyclonosic" value="5"> Cyklonosič střešní (+5% příplatek z celkové ceny zápůjčky navíc)
+      </label><br>
+      <label>
+        <input type="radio" name="cyclonosic" value="10"> Cyklonosič na tažné zařízení (+10% příplatek z celkové ceny zápůjčky navíc)
+      </label><br>
+      <label>
+        <input type="radio" name="cyclonosic" value="0" checked> Není třeba cyklonosič
+      </label>
+    </fieldset>
+    <br>
+    <label>Můj celkový rozpočet:</label>
+    <input type="number" name="mujRozpocet" min="0">
+    <br><br>
+   
+  
+
+  <div id="result"></div>
+  
+  <button type="button" onclick="calculateTotal()">Přepočítej celkovou cenu</button>
+  <br><br>
+
+  <label>Můj email:</label>
+  <input type="email" name="userEmail">
+  <br><br>
+
+  <div id="emailMessage"></div>  
+
+  <button type="button" onclick="submitOrder()">Odešli objednávku</button>
+
+</form>
+
+  <script src="script.js"></script>
+</body>
+</html>
